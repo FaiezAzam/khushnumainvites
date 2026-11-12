@@ -17,7 +17,7 @@ function Card({ inv, onView }: { inv: Invitation; onView: () => void }) {
         <p className="font-display text-[10px] tracking-[.3em] text-gold uppercase">{cat.icon} {cat.name} · {inv.id}</p>
         <h3 className="font-display text-lg text-maroon">{inv.title}</h3>
         <p className="text-base leading-snug">{inv.description}</p>
-        {inv.price && <p className="text-emerald"><b>{inv.price}</b></p>}
+        {inv.price && <p className="font-display text-lg text-emerald"><b>{inv.price}</b></p>}
         <div className="flex gap-2">
           <button onClick={onView} className="btn btn-line flex-1 !px-3">View</button>
           <a href={waLink(orderMessage(`${inv.title} (${inv.id})`))} target="_blank" rel="noopener" className="btn btn-gold flex-1 !px-3">Order</a>
