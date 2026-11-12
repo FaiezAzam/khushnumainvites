@@ -3,12 +3,13 @@ import { CATEGORIES, INVITATIONS } from "@/lib/invitations";
 import { waLink } from "@/lib/config";
 
 export default function InquiryForm() {
-  const submit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const f = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
-    const msg = `Hello Khushnuma Invites!\n\nName: ${f.name}\nWhatsApp: ${f.phone}\nDesign: ${f.design || "Not selected"}\nEvent: ${f.event}\n\n${f.message || ""}`;
-    window.open(waLink(msg), "_blank");
-  };
+const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const fd = new FormData(e.currentTarget);
+  const get = (k: string) => String(fd.get(k) ?? "");
+  const msg = `Hello Khushnuma Invites!\n\nName: ${get("name")}\nWhatsApp: ${get("phone")}\nDesign: ${get("design") || "Not selected"}\nEvent: ${get("event")}\n\n${get("message")}`;
+  window.open(waLink(msg), "_blank");
+};
   const field = "w-full rounded-xl border border-gold/50 bg-white/80 px-4 py-3 outline-none focus:ring-2 focus:ring-gold";
   return (
     <form onSubmit={submit} className="mx-auto grid max-w-xl gap-4 rounded-3xl border border-gold/40 bg-white/60 p-6 sm:p-8">

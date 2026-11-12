@@ -54,7 +54,7 @@ export default function Home() {
       <footer className="bg-maroon px-5 py-12 text-center text-ivory">
         <p className="gold-text font-display text-2xl tracking-widest">{SITE.name}</p><p className="text-sm">{SITE.tagline}</p>
         <div className="my-5 flex flex-wrap justify-center gap-5 font-display text-xs tracking-widest uppercase">
-          <a href={SITE.instagram}>Instagram</a><a href={SITE.facebook}>Facebook</a><a href={`mailto:${SITE.email}`}>Email</a><a href="#collection">Collection</a><a href="#how">How it works</a></div>
+          <a href={SITE.instagram}>Instagram</a><a href="#collection">Collection</a><a href="#how">How it works</a></div>
         <p className="text-sm opacity-70">© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p></footer>
 
       <a href={waLink(hello)} target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
