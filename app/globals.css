@@ -1,0 +1,11 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+body { @apply bg-ivory text-maroon/90 font-serif text-lg; }
+.gold-text { background: linear-gradient(120deg,#8a6420,#e8c97a 45%,#b8892e); -webkit-background-clip: text; color: transparent; }
+.btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-display text-xs tracking-widest uppercase transition duration-300; }
+.btn-gold { @apply bg-gradient-to-r from-gold to-goldlt text-maroon shadow-lg shadow-gold/30 hover:scale-105; }
+.btn-line { @apply border border-gold text-maroon hover:bg-gold/10; }
+.pattern { background-image: radial-gradient(circle at 1px 1px, rgba(184,137,46,.18) 1px, transparent 0); background-size: 22px 22px; }
+@keyframes twinkle { 0%,100% { opacity:.15; transform:scale(.8) } 50% { opacity:.9; transform:scale(1.2) } }
+.light { position:absolute; border-radius:9999px; background:#f6d98a; box-shadow:0 0 14px 4px rgba(246,217,138,.8); animation: twinkle 3.5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .light { animation: none } }
+html { scroll-behavior: smooth }
